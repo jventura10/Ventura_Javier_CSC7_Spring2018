@@ -1,7 +1,7 @@
 /*
  * File:   main.cpp
  * Author: Javier Ventura 
- * Purpose: Project 1 MasterMind Game
+ * Purpose: CSC 7 Project 1 MasterMind Game
  * Created on April 6, 2018, 12:42 PM
  */
 
@@ -25,12 +25,13 @@ int main(int argc, char** argv) {
         cout<<"----------"<<endl;
         cout<<"(1)Play Game"<<endl;
         cout<<"(2)Watch AI Play"<<endl;
-        cout<<"(3)Quit Game"<<endl;
+        cout<<"(3)Quick Rules"<<endl;
+        cout<<"(4)Quit Game"<<endl;
         cout<<"Enter Choice: ";
         cin>>choice;
         
-        while(choice<1 || choice>3){
-            cout<<"Not a Valid Option, Try Again: ";
+        while(choice<1 || choice>4){
+            cout<<"Not a Valid Menu Option, Try Again: ";
             cin>>choice;
         }
         
@@ -43,7 +44,7 @@ int main(int argc, char** argv) {
                 int x3;     //3rd Spot, Player Enters
                 int x4;     //4th Spot, Player Enters
                 bool one=false,two=false,three=false,four=false;    //Marks when Player Guesses All 4
-                int tries=3; //Number of Tries, Player gets
+                int tries=10; //Number of Tries, Player gets
                 
                 //Fill Array with the Contents 1-8 
                 for(int i=0;i<4;i++){
@@ -110,7 +111,7 @@ int main(int argc, char** argv) {
 
                     tries--;    //Tries goes down
                 
-                    cout<<tries<<endl;
+                    cout<<"Tries Left: "<<tries<<endl;
                     
                     if(tries<=0){
                         cout<<endl;
@@ -120,7 +121,7 @@ int main(int argc, char** argv) {
                     }
                     
                 }while(tries>0); 
-                
+                break;   
             }
             case 2:{
                 cout<<endl;
@@ -129,6 +130,18 @@ int main(int argc, char** argv) {
                 break;
             }
             case 3:{
+                cout<<endl;
+                cout<<"Mastermind Game Rules:"<<endl;
+                cout<<"There is 4 Spots to fill"<<endl;
+                cout<<"Each spot can be an integer 1-8"<<endl;
+                cout<<"Duplicates are allowed"<<endl;
+                cout<<"Each round is given 10 Tries"<<endl;
+                cout<<"Blanks are not allowed"<<endl;
+                cout<<"Wrong Spot means a number you guessed is right but in the wrong spot"<<endl;
+                cout<<"Right Spot means a guess is right and in the right spot"<<endl;
+                cout<<"Good Luck!"<<endl;
+            }
+            case 4:{
                 cout<<endl;
                 cout<<"Exiting Game... :("<<endl;
                 cout<<endl;
