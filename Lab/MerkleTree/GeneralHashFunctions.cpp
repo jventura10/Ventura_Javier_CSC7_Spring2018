@@ -161,7 +161,7 @@ unsigned int FNVHash(const std::string& str)
 /* End Of FNV Hash Function */
 
 
-unsigned int APHash(const std::string& str){
+unsigned int APHash(std::string& str){
    unsigned int hash = 0xAAAAAAAA;
 
    for(std::size_t i = 0; i < str.length(); i++){
